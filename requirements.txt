@@ -1,0 +1,14 @@
+# Python 3.12 or newer is required. pandas, numpy and matplotlib need >= 3.11,
+# but scipy 1.18.0 needs >= 3.12, so 3.12 is the floor for this file.
+# Versions are pinned so every machine should produce the same results. If you need to
+# upgrade one, do it deliberately and rerun all four notebooks, because a different
+# pandas major can change dtypes and silently change your numbers.
+
+pandas==3.0.5
+numpy==2.4.6
+jupyter==1.1.1
+matplotlib==3.11.0
+seaborn==0.13.2
+scipy==1.18.0
+# used only to download data/raw (see data/README.md); no notebook imports it
+kagglehub==1.0.2

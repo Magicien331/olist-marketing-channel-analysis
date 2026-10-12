@@ -1,0 +1,28 @@
+# --- Python ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Office and editor temp files ---
+*.tmp
+~$*
+
+# NOTE: data/ and *.csv are deliberately NOT ignored.
+# The Olist raw datasets are committed to this repo so anyone
+# gets them with a plain `git clone`. Do not add data rules here.
+
+
+# --- Cleaned outputs ---
+# Only final tables are shared. Intermediates stay local: they are
+# reproducible from data/raw plus the notebooks, and committing them
+# grows the repo on every re-run and causes conflicts on files nobody
+# edited by hand. Name any table meant to be shared final_*.csv
+data/clean/*
+!data/clean/final_*.csv

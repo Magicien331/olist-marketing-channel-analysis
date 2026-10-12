@@ -1,0 +1,24 @@
+# Line endings.
+# The repo is shared between macOS and Windows. Git for Windows defaults to
+# core.autocrlf=true, which would rewrite all 121 MB of committed CSVs to CRLF
+# on checkout and show every data file as modified. These rules store and check
+# out LF everywhere, so both machines see identical files. The one exception is
+# data/raw: two of the Kaggle files ship with CRLF endings, and the raw data is
+# kept byte-for-byte as downloaded, so git never converts anything in it.
+* text=auto eol=lf
+
+# Data and text files: always LF.
+*.csv  text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.py   text eol=lf
+*.ipynb text eol=lf
+
+# Raw source data: stored exactly as downloaded, never converted (overrides *.csv above).
+data/raw/*.csv -text
+
+# Binary: never transform, never try to merge.
+*.pdf  binary
+*.xlsx binary
+*.png  binary
+*.jpg  binary
